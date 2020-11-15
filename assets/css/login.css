@@ -1,0 +1,102 @@
+html,
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/login_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+i,
+em {
+    font-style: normal;
+    font-weight: normal;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+@media screen and (min-width:1920px) {
+    html {
+        font-size: 80px!important;
+    }
+}
+
+@media screen and (max-width:320px) {
+    html {
+        font-size: 13.33px!important;
+    }
+}
+
+
+/* 小屏适配 */
+
+@media screen and (max-width:991px) {
+    .bigevent-logo {
+        text-align: center!important;
+    }
+}
+
+.layui-container {
+    height: 100%;
+}
+
+
+/* logo */
+
+.bigevent-logo {
+    width: 15rem;
+    margin: 0.25rem auto 0;
+}
+
+
+/* 登录注册框 */
+
+.login-reg-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.login-box,
+.reg-box {
+    padding: 0 30px;
+}
+
+.title-logo {
+    height: 60px;
+    background: url("../images/login_title.png") no-repeat center;
+}
+
+.layui-icon-username,
+.layui-icon-password {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.username,
+.password {
+    padding-left: 35px;
+    font-size: 14px;
+}
+
+.reg-box {
+    display: none;
+}
+
+.login-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
