@@ -74,7 +74,8 @@ $(function() {
                         //记住用户名和密码
                         saveAccount(data.field.username, data.field.password);
                         //保存token
-                        localStorage.setItem("token", res.token)
+                        localStorage.setItem("token", res.token);
+                        //跳转到后台主页
                         location.href = 'index.html'
                         break;
                     case 1:

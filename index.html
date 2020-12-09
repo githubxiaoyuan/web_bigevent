@@ -4,11 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>大事件后台管理系统</title>
+    <!-- 导入layui的CSS文件 -->
+    <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
+    <!-- 导入自己创建的后台主页index的CSS文件 -->
+    <link rel="stylesheet" href="assets/css/index.css">
+
 </head>
 
-<body>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">
+                <img src="assets/images/logo.png" alt="">
+            </div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
 
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <!-- 用户头像 -->
+                    <a href="javascript:;">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img user-header">
+                        <span class="text-avatar"></span> 个人中心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="user/basic_info.html" class="basic-info-link" id="basicInfoLink" target="fm">基本资料</a></dd>
+                        <dd><a href="user/modify_avatar.html" target="fm" class="modify-avatar-link">更换头像</a></dd>
+                        <dd><a href="user/reset_password.html" target="fm" class="modify-password-link">重置密码</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="javascript:;" id="logout"><i class="layui-icon layui-icon-logout"></i>退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+
+                <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
+
+                    <!-- 欢迎用户 -->
+                    <li class="welcome-user">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img user-header"><span class="text-avatar"></span>欢迎 <span class="span-username"></span>
+                    </li>
+                    <!-- 首页 -->
+                    <li class="layui-nav-item"><a href="home/dashboard.html" target="fm" class="left-nav-common" id="homePage"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+
+                    <!-- 文章管理 -->
+                    <li class="layui-nav-item">
+                        <a href="javascript:;" class="left-nav-common"><i class="layui-icon layui-icon-read"></i>文章管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="article/article_category.html" target="fm" class="article-category-link" id="articleCategor"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
+                            <dd><a href="article/publish_article.html" target="fm"><i class="layui-icon layui-icon-app"></i>发表文章</a></dd>
+                        </dl>
+                    </li>
+
+                    <!-- 个人中心 -->
+                    <li class="layui-nav-item layui-nav-itemed mycenter">
+                        <a class="left-nav-common" href="javascript:;"><i class="layui-icon layui-icon-username"></i>个人中心</a>
+                        <dl class="layui-nav-child mycenterList">
+                            <dd><a href="user/basic_info.html" class="basic-info-link" target="fm"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
+                            <dd><a href="user/modify_avatar.html" target="fm" class="modify-avatar-link"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
+                            <dd><a href="user/reset_password.html" target="fm" class="modify-password-link"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 内容主体区域 -->
+        <div class="layui-body">
+            <div class="fm-wrap">
+                <!-- 首页 -->
+                <iframe name="fm" src="" frameborder="0" class="fm-body"></iframe>
+            </div>
+        </div>
+
+        <!-- 底部固定区域 -->
+        <div class="layui-footer">
+            © www.xiaoyuan.com - 练习两年BUG的实习生
+        </div>
+    </div>
+
+
+
+    <!-- 导入jquery文件 -->
+    <script src="assets/lib/jquery-3.5.1.min.js"></script>
+    <!-- 导入layui的js文件 -->
+    <script src="assets/lib/layui/layui.all.js"></script>
+    <!-- 导入自己创建的API根路径文件 -->
+    <script src="assets/js/baseAPI.js"></script>
+    <!-- 导入自己创建的后台主页js文件 -->
+    <script src="assets/js/index.js"></script>
+
+    <script>
+        //自动点击首页
+        var homePageLink = document.getElementById('homePage');
+        homePageLink.click();
+    </script>
 </body>
 
 </html>

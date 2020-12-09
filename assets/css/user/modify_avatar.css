@@ -1,0 +1,61 @@
+.cropper {
+    display: flex;
+}
+
+.cropper-box {
+    /* display: flex; */
+    width: 400px;
+    height: 400px;
+}
+
+.pre-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.pre-avatar .layui-word-aux {
+    font-size: 12px;
+}
+
+.pre-avatar1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: pink;
+}
+
+.pre-avatar2 {
+    width: 50px;
+    height: 50px;
+    margin-top: 60px;
+    border-radius: 50%;
+    background-color: pink;
+}
+
+.img-preview {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.img-preview img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50%;
+    transform: none !important;
+}
+
+.img-preview canvas {
+    border-radius: 50%;
+}
+
+.layui-form-item {
+    margin-top: 10px;
+    margin-left: 410px;
+}
+
+.layui-form-item .layui-input-block {
+    margin-left: 0;
+}

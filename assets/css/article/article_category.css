@@ -1,0 +1,22 @@
+.article-category .layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-category-btn {
+    width: 80px;
+    height: 30px;
+    padding: 0;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.article-category-id {
+    display: none !important;
+}
+
+#addArticleCategoryForm input[type="text"] {
+    width: 360px;
+}

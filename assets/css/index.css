@@ -1,0 +1,112 @@
+/* 去除layui链接动画 */
+
+a {
+    transition: none !important;
+}
+
+
+/* 头部区域START */
+
+.layui-icon-logout {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.text-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #009688;
+    border-radius: 50%;
+}
+
+
+/* 头部区域END */
+
+
+/* 左侧导航区域START */
+
+.left-nav-common {
+    font-size: 13px;
+}
+
+.left-nav-common .layui-icon {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+
+/* 欢迎用户 */
+
+.welcome-user {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 12px;
+    user-select: none;
+}
+
+.span-username {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+
+/* 个人中心 */
+
+.layui-nav-child dd a {
+    padding: 0 30px!important;
+    font-size: 13px;
+}
+
+.layui-icon-app {
+    margin-right: 10px;
+}
+
+.user-header {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+.welcome-user {
+    border-bottom: 1px solid #282B33;
+}
+
+
+/* 左侧导航区域END */
+
+
+/* 内容主体部分 */
+
+.layui-body {
+    /* overflow: hidden; */
+    background-color: #F2F3F5;
+}
+
+.fm-wrap {
+    padding: 15px;
+    height: 100%;
+}
+
+.layui-body .fm-body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 底部固定区域STRAT */
+
+.layui-footer {
+    text-align: center;
+}
+
+
+/* 底部固定区域END */

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 导入layui的CSS文件 -->
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <!-- 导入文章类别CSS文件 -->
+    <link rel="stylesheet" href="../assets/css/article/article_category.css">
+
+</head>
+
+<body>
+    <!-- 文章类别 -->
+
+    <!-- 添加文章分类弹出表单 -->
+    <form class="layui-form" id="addArticleCategoryForm" style="display: none;">
+        <div class="layui-form-item" style="margin-top: 15px;">
+            <label class="layui-form-label">分类名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类别名</label>
+            <div class="layui-input-block">
+                <input type="text" name="alias" required lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="addArticleCategoryBtn">确认添加</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- 编辑文章分类弹出表单 -->
+    <form class="layui-form" id="editArticleCategoryForm" style="display: none;">
+        <input type="hidden" name="Id" class="layui-input article-category-form-id">
+        </div>
+        <div class="layui-form-item" style="margin-top: 15px;">
+            <label class="layui-form-label">分类名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input edit-category-name">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类别名</label>
+            <div class="layui-input-block">
+                <input type="text" name="alias" required lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input edit-category-nickname">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="editArticleCategoryBtn">确认修改</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- 文章类别主页 -->
+    <div class="layui-card article-category">
+        <div class="layui-card-header">文章类别管理<button type="button" class="layui-btn layui-btn-normal add-category-btn">添加类别</button></div>
+        <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
+                    <col>
+                    <col width="350">
+                    <col width="250">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>分类名称</th>
+                        <th>分类别名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="articleCategoryView"></tbody>
+                <!-- 文章类别渲染模板 -->
+                <script id="articleCategoryModule" type="text/html">
+                    {{# layui.each(d,function(index,item){ }}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.alias }}</td>
+                        <td>
+                            <button type="button" class="layui-btn layui-btn-xs edit-article-category">编辑</button>
+                            <button type="button" class="layui-btn layui-btn-xs layui-btn-danger del-article-category">删除</button>
+                            <span class="article-category-id">{{ item.Id }}</span>
+                        </td>
+                    </tr>
+                    {{# }); }}
+                </script>
+            </table>
+        </div>
+    </div>
+
+    <!-- 导入jquery文件 -->
+    <script src="../assets/lib/jquery-3.5.1.min.js"></script>
+    <!-- 导入layui的js文件 -->
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- 导入自己创建的API根路径文件 -->
+    <script src="../assets/js/baseAPI.js"></script>
+    <!-- 导入自己创建的文章类别JS文件 -->
+    <script src="../assets/js/article/article_category.js"></script>
+</body>
+
+</html>
