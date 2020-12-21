@@ -7,10 +7,10 @@
     <title>Document</title>
     <!-- 导入layui的CSS文件 -->
     <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
-    <!-- 导入发表文章CSS文件 -->
-    <link rel="stylesheet" href="../assets/css/article/publish_article.css">
     <!-- 导入cropper图片裁剪插件的css文件 -->
     <link rel="stylesheet" href="../assets/lib/cropper/cropper.css">
+    <!-- 导入发表文章CSS文件 -->
+    <link rel="stylesheet" href="../assets/css/article/publish_article.css">
     <!-- 引入TinyMCE脚本 -->
     <script src="../assets/lib/tinymce/js/tinymce/tinymce.min.js"></script>
 </head>
@@ -20,7 +20,7 @@
     <div class="layui-card publish_article">
         <div class="layui-card-header">写文章</div>
         <div class="layui-card-body">
-            <form class="layui-form" action="">
+            <form class="layui-form" id="pubAtrForm">
                 <div class="layui-form-item">
                     <label class="layui-form-label">文章标题</label>
                     <div class="layui-input-block">
@@ -41,7 +41,7 @@
                     </script>
 
                     <div class="layui-input-block article-select-input">
-                        <select name="city" lay-verify="required" id="selectArticleCategoryView">
+                        <select name="cate_id" lay-verify="required" id="selectArticleCategoryView">
 
                         </select>
                     </div>
@@ -51,13 +51,31 @@
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">文章内容</label>
                     <div class="layui-input-block">
-                        <textarea name="desc" class="layui-textarea" id="myTinyMce"></textarea>
+                        <textarea name="content" class="layui-textarea" id="myTinyMce"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章封面</label>
+                    <div class="layui-input-block">
+                        <div class="cropper">
+                            <div class="cropper-box">
+                                <img src="../assets/images/sample.jpg" class="upload-avatar-area">
+                            </div>
+                            <div class="pre-and-upload">
+                                <div class="pre-avatar">
+                                    <div class="img-preview pre-avatar1"></div>
+                                    <button class="layui-btn layui-btn-danger" id="choseCoverBtn" type="button">选择封面</button>
+                                    <input type="file" accept="image/*" style="display: none;" id="selectCover">
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        <button class="layui-btn" lay-submit lay-filter="formDemo" id="saveAtrBtn">存为草稿</button>
                     </div>
                 </div>
             </form>

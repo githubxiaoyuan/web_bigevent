@@ -85,6 +85,7 @@ function uploadAvatar() {
         width: 100,
         height: 100
     }).toDataURL();
+
     if (dataURL) {
         $.ajax({
             method: 'POST',

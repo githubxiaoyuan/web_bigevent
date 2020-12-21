@@ -1,0 +1,42 @@
+.cropper {
+    display: flex;
+}
+
+.cropper-box {
+    /* display: flex; */
+    overflow: hidden;
+    width: 400px;
+    height: 280px;
+}
+
+.pre-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.pre-avatar1 {
+    width: 200px;
+    height: 140px;
+    margin-bottom: 20px;
+    background-color: pink;
+}
+
+.img-preview canvas {
+    width: 200px !important;
+    height: 140px !important;
+}
+
+
+/* .img-preview {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.img-preview img {
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+} */
