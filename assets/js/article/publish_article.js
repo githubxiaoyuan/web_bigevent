@@ -163,9 +163,6 @@ $("#pubAtrForm").on("submit", function(e) {
         // 得到文件对象后，进行后续的操作
         // 将文件对象，存储到 fd 中
         fd.append('cover_img', blob);
-        fd.forEach(function(i, item) {
-            console.log(i, item);
-        });
         // 发起 ajax 数据请求
         $.ajax({
             method: 'POST',
@@ -178,7 +175,40 @@ $("#pubAtrForm").on("submit", function(e) {
                     return layer.msg(res.message);
                 }
                 layer.msg(res.message);
+                location.href = "article_list.html"
             }
         })
     });
 })
+
+// 接受编辑跳转传递的参数
+var editAtrId = location.search.substr(1);
+if (editAtrId) {
+    renderAtr(editAtrId);
+}
+// 根据传递的文章ID渲染信息
+function renderAtr(id) {
+    id = editAtrId;
+    $.ajax({
+        method: 'GET',
+        url: '/my/article/' + id,
+        success: function(res) {
+            if (res.status !== 0) {
+                return layer.mas(res.message);
+            }
+            //给表单赋值
+            form.val("artForm", {
+                title: res.data.title,
+                cate_id: res.data.cate_id,
+                content: res.data.content
+            });
+            form.render();
+            // 重构cropper图片
+            $(".upload-avatar-area").cropper('replace', 'http://ajax.frontend.itheima.net/my/article/' + res.data.cover_img, true);
+            $('.cropper-box>img').cropper('destroy');
+            $('.cropper-box>img').attr("src", 'http://ajax.frontend.itheima.net/my/article/' + res.data.cover_img);
+            initCropper();
+
+        }
+    })
+}

@@ -20,7 +20,7 @@
     <div class="layui-card publish_article">
         <div class="layui-card-header">写文章</div>
         <div class="layui-card-body">
-            <form class="layui-form" id="pubAtrForm">
+            <form class="layui-form" id="pubAtrForm" lay-filter="artForm">
                 <div class="layui-form-item">
                     <label class="layui-form-label">文章标题</label>
                     <div class="layui-input-block">
@@ -36,7 +36,7 @@
                     <script id="articleCategoryTpl" type="text/html">
                         <option value="">请选择文章类别</option>
                         {{# layui.each(d,function(index,item){ }}
-                        <option value="{{ index }}">{{ item.name }}</option>
+                        <option value="{{ item.Id }}">{{ item.name }}</option>
                         {{# });}}
                     </script>
 
@@ -74,8 +74,8 @@
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                        <button class="layui-btn" lay-submit lay-filter="formDemo" id="saveAtrBtn">存为草稿</button>
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">发布</button>
+                        <button class="layui-btn layui-btn-primary" lay-submit lay-filter="formDemo" id="saveAtrBtn">存为草稿</button>
                     </div>
                 </div>
             </form>
